@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="search grey" style="margin-top: 70px; font-family: Arial, Helvetica, sans-serif;">
+    <!-- этот блок задаёт три кнопки, каждая из которых открывает вкладку по нужному айдишнику, функция
+    для этого прописана в main.js -->
+    <div class="tab">
+        <button type="button" class="tablinks active" id="header_simple" onclick="openSearch(event, 'tab_1')">1</button>
+        <button type= "button" class="tablinks" id="header_advanced" onclick="openSearch(event, 'tab_2')">2</button>
+        <button type= "button" class="tablinks" id="header_advanced" onclick="openSearch(event, 'tab_3')">3</button>
+    </div>
+    
+    <div class="container-fluid" style="padding-top: 100px;">
+
+      <div class="tabcontent" id="tab_1" style="display: block;"> <!-- display:block нужен для того, чтобы сначала всё-таки
+                                                                       отображалась первая вкладка -->
+          FIRST TAB
+      </div>
+    
+      <div class="tabcontent" id="tab_2">
+        SECOND TAB
+      </div>
+
+      <div class="tabcontent" id="tab_3">
+        <form method="get" id="my_fancy_form">
+          <div class="form-group" style="width: 100%;">
+            <label>Test Word</label>
+            <input class="form-control" name="test">
+          </div>
+          <div class="form-group center" style="width: max-content;padding-bottom: 15px;">
+            <button type="submit" class="btn btn-primary">press the button</button>
+          </div>
+        </form>
+
+        <div id="output">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+</div>
+
+{% endblock %}
