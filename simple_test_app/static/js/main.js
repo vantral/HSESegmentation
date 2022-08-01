@@ -21,6 +21,7 @@ evt.currentTarget.className += " active";
 }
 
 
+
 $(function() {
   $('#my_fancy_form').on('submit', function() {
     event.preventDefault();
