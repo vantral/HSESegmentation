@@ -1,0 +1,60 @@
+#!/bin/bash
+echo -n quantity
+for a in $@ them; do
+	echo -ne "\t$a"
+done
+echo
+
+echo -n disk
+for a in $@ them; do
+	echo -ne "\t$(du -sh $a.hfstol | cut -f1)"
+done
+echo
+
+echo -n user
+for a in $@ them; do
+	echo -ne "\t$(head -n1 wordlist.$a.time | cut -d. -f1)s"
+done
+echo
+
+echo -n maxres
+for a in $@ them; do
+	echo -ne "\t$(head -n1 wordlist.$a.time | cut -d' ' -f6 | cut -dm -f1)k"
+done
+echo
+
+echo -n "unique tokens:"
+for a in $@ them; do
+	echo -ne "\t$(( $(grep -vc '\*' wordlist.$a) * 100 / $(wc -l < wordlist) ))%"
+done
+echo
+
+echo -n "total tokens:"
+for a in $@ them; do
+	echo -ne "\t$(( $( \
+		paste wordfreq wordlist.$a \
+		| grep -v '\*' \
+		| awk 'BEGIN{x=0}{x=x+$1}END{print x}'
+	) * 100 / $(
+		awk 'BEGIN{x=0}{x=x+$1}END{print x}' < wordfreq
+	) ))%"
+done
+echo
+
+for a in $@; do
+	echo
+	echo "most-frequent failures $a against them:"
+	paste wordfreq wordlist.$a wordlist.them \
+		| awk '$3 ~ /\*/ && $4 !~ /\*/ { print;n+=1;x+=$1; } END{print "total: " x "	" n}' \
+		| tail -n11
+	echo
+	echo "most-frequent common with $a failures:"
+	paste wordfreq wordlist.$a wordlist.them \
+		| awk '$3 ~ /\*/ && $4 ~ /\*/ { print;n+=1;x+=$1; } END{print "total: " x "	" n}' \
+		| tail -n11
+	echo
+	echo "most-frequent successes $a against them:"
+	paste wordfreq wordlist.$a wordlist.them \
+		| awk '$3 !~ /\*/ && $4 ~ /\*/ { print;n+=1;x+=$1; } END{print "total: " x "	" n}' \
+		| tail -n11
+done

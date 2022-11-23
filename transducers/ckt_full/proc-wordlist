@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/time parallel -a wordlist --pipepart --keep-order --block-size -1 hfst-proc $1 > wordlist.$2 2> wordlist.$2.time

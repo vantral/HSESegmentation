@@ -1,0 +1,17 @@
+#!/bin/bash
+
+trans="$1"
+shift
+
+temp1=$(mktemp)
+temp2=$(mktemp)
+
+cat "$f" > "$temp1"
+
+for f in $@; do
+	./hfst-eliminate-flag2 "$temp1" "$f" > "$temp2"
+	hfst-minimise "$temp2" > "$temp1"
+done
+rm "$temp2"
+cat "$temp1"
+rm "$temp1"

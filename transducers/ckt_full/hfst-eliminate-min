@@ -1,0 +1,8 @@
+#!/bin/bash
+
+d="$(mktemp -d)"
+
+parallel "./hfst-eliminate-flag2 '$1' {} | hfst-minimise > '$d'/{}"
+
+cat "$d/$(ls -S "$d/" | tail -n1)"
+rm -r "$d"

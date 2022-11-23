@@ -1,0 +1,554 @@
+PATTERNS
+IntransitiveVerb
+TransitiveVerb
+
+PATTERN IntransitiveVerb
+:IV(2) VerbalStem[-tv] [<v><iv>:] IV(1): :IV(3)
+
+PATTERN TransitiveVerb
+:TV(2) VerbalStem[-iv] [<v><tv>:] TV(1): :TV(3)
+
+PATTERN VerbalStem
+Ints? Ints2? DesidVerbalStem Iter? Coll? Dur? InchCompl?
+
+PATTERN DesidVerbalStem
+Desid(1) ApVerbalStem Desid(2)
+ApVerbalStem
+
+PATTERN ApVerbalStem
+Ap(1) Cs? DerivableVerbStem Ap(2)
+Cs? DerivableVerbStem
+
+PATTERN DerivableVerbStem
+VerbStem Th?
+Nouns [[iv]:[iv]] [<consume>:>у] Th?
+Nouns [<utilitiv>:>{ы}тку] Th?
+[:те>] Nouns [<create>[iv]:>ӈ{⁺ⱽᴴ}a] Th?
+(Nouns|VerbStem) [<rev>:>{ы}тв] Th?
+DerivedNouns [[iv]:[iv]] Th
+DerivedNouns [[tv]:[tv]] Th
+DerivedNouns [<incorp>+[iv]:>{ы}[iv]] VerbStem Th?
+
+LEXICON Approx
+<approx>:м{Æ}ч{ы}>
+
+LEXICON Ints
+<ints>:т{Æ}{N}{ы}>
+
+LEXICON Ints2
+<ints2>:ԓ{ы}ги>
+
+LEXICON Desid(2)
+<desid>:р{Æ}> <desid>:>ӈ
+
+LEXICON Ap(2)
+<ap>:ин{Æ}> <ap2>:>тку
+
+LEXICON Cs
+<caus>:{R}{ы}>
+
+LEXICON Th
+<th>:>{Æ}т
+<th>:>{Æ}в
+<th>:>{Æ}{Æ}
+<th>:>ъ{Æ}
+
+LEXICON Iter
+<iter>:>{ы}тку
+
+LEXICON Coll
+<coop_s>:>{ы}ръу
+<coop_o>:>{ы}йв
+
+LEXICON Dur
+<dur>:>{ы}ԓъ{Æ}т
+
+LEXICON InchCompl
+<inch>:>{ы}мго
+<inch2>:>{ы}ӈӈо
+<inch2>:>{ы}мго
+<compl>:>{ы}пԓытку
+
+LEXICON IV(3)
+<neut><aor><s_sg1>      т{ы}>    >{ы}к
+<neut><aor><s_pl1>      мыт{ы}>  >{ы}мык
+<neut><aor><s_sg2>      :        >и
+<neut><aor><s_pl2>      :        >{ы}тык
+<neut><aor><s_sg3>      :        >и
+<neut><aor><s_pl3>      :        >{ы}т
+
+<neut><aor><s_sg1><th>  т{ы}>    >{ы}гъ{Æ}к
+<neut><aor><s_sg2><th>  :        >{ы}гъи
+<neut><aor><s_sg3><th>  :        >{ы}гъи
+<neut><aor><s_pl3><th>  :        >{ы}гъ{Æ}т
+
+<neut><fut><s_sg1>      т{ы}>р{Æ}>   >{ы}к
+<neut><fut><s_pl1>      мыт{ы}>р{Æ}> >{ы}мык
+<neut><fut><s_sg2>      >р{Æ}>       >и
+<neut><fut><s_pl2>      >р{Æ}>       >{ы}тык
+<neut><fut><s_sg3>      >р{Æ}>       >и
+<neut><fut><s_pl3>      >р{Æ}>       >{ы}т
+
+<neut><fut><s_sg1>      т{ы}>р{Æ}>   >{ы}гъ{Æ}
+<neut><fut><s_pl1>      мыт{ы}>р{Æ}> >{ы}гъ{Æ}
+<neut><fut><s_sg2>      >р{Æ}>       >{ы}гъ{Æ}
+<neut><fut><s_sg3>      >р{Æ}>       >{ы}гъ{Æ}
+
+<neut><intn><s_sg1>     м{ы}>        >{ы}к
+<neut><intn><s_pl1>     мын{ы}>      >{ы}мык
+<neut><intn><s_sg2>     ӄ{ы}>        >{ы}ги
+<neut><intn><s_pl2>     ӄ{ы}>        >{ы}тык
+<neut><intn><s_sg3>     н{ы}>        >{ы}н
+<neut><intn><s_pl3>     н{ы}>        >{ы}н{Æ}т
+
+<neut><intn><s_sg1><th> м{ы}>        >{ы}гъ{Æ}к
+<neut><intn><s_sg3><th> н{ы}>        >{ы}гъ{Æ}н
+
+
+<neut><cond><s_sg1>     м{ы}>ъ{ы}>        >{ы}к
+<neut><cond><s_pl1>     мын{ы}>ъ{ы}>      >{ы}мык
+<neut><cond><s_sg2>     н{ы}>ъ{ы}>        >{ы}ги
+<neut><cond><s_pl2>     н{ы}>ъ{ы}>        >{ы}тык
+<neut><cond><s_sg3>     н{ы}>ъ{ы}>        >{ы}н
+<neut><cond><s_pl3>     н{ы}>ъ{ы}>        >{ы}н{Æ}т
+
+<neut><cond><s_sg1><th> м{ы}>ъ{ы}>        >{ы}гъ{Æ}к
+<neut><cond><s_sg3><th> н{ы}>ъ{ы}>        >{ы}гъ{Æ}н
+
+<prog><aor><s_sg1>  т{ы}>    >{ы}ркын
+<prog><aor><s_pl1>  мыт{ы}>  >{ы}ркын
+<prog><aor><s_sg2>  :        >{ы}ркын
+<prog><aor><s_pl2>  :        >{ы}ркыни>тык
+<prog><aor><s_sg3>  :        >{ы}ркын
+<prog><aor><s_pl3>  :        >{ы}ркыт
+
+<prog><fut><s_sg1>  т{ы}>р{Æ}>    >{ы}ркын
+<prog><fut><s_pl1>  мыт{ы}>р{Æ}>  >{ы}ркын
+<prog><fut><s_sg2>  р{Æ}>         >{ы}ркын
+<prog><fut><s_pl2>  р{Æ}>         >{ы}ркыни>тык
+<prog><fut><s_sg3>  р{Æ}>         >{ы}ркын
+<prog><fut><s_pl3>  р{Æ}>         >{ы}ркыт
+
+<prog><intn><s_sg1>  м{ы}>    >{ы}ркын
+<prog><intn><s_pl1>  мын{ы}>  >{ы}ркын
+<prog><intn><s_sg2>  ӄ{ы}>    >{ы}ркын
+<prog><intn><s_pl2>  ӄ{ы}>    >{ы}ркыни>тык
+<prog><intn><s_sg3>  н{ы}>    >{ы}ркын
+<prog><intn><s_pl3>  н{ы}>    >{ы}ркын{Æ}>т
+
+<prog><cond><s_sg1>  м{ы}>ъ{ы}>    >{ы}ркын
+<prog><cond><s_pl1>  мын{ы}>ъ{ы}>  >{ы}ркын
+<prog><cond><s_sg2>  н{ы}>ъ{ы}>    >{ы}ркын
+<prog><cond><s_pl2>  н{ы}>ъ{ы}>    >{ы}ркыни>тык
+<prog><cond><s_sg3>  н{ы}>ъ{ы}>    >{ы}ркын
+<prog><cond><s_pl3>  н{ы}>ъ{ы}>    >{ы}ркын{Æ}>т
+
+<stat><perf><s_sg1>  : >{I}гым
+<stat><perf><s_pl1>  : >{ы}мури
+<stat><perf><s_sg2>  : >{I}гыт
+<stat><perf><s_pl2>  : >{ы}тури
+<stat><perf><s_sg3>  : >{ы}ԓин
+<stat><perf><s_pl3>  : >{ы}ԓин{Æ}т
+
+<stat><hab><s_sg1>  : >{I}гым
+<stat><hab><s_pl1>  : >{ы}мури
+<stat><hab><s_sg2>  : >{I}гыт
+<stat><hab><s_pl2>  : >{ы}тури
+<stat><hab><s_sg3>  : >{ы}ӄин
+<stat><hab><s_pl3>  : >{ы}ӄин{Æ}т
+
+LEXICON TV(3)
+#
+#
+<neut><aor><a_sg2><o_sg1>  ин{Æ}>  >и
+<neut><aor><a_sg2><o_sg1>  ин{Æ}>  >{ы}гъи
+<neut><aor><a_pl2><o_sg1>  ин{Æ}>  >{ы}тык
+<neut><aor><a_sg3><o_sg1>  ин{Æ}>  >и
+<neut><aor><a_sg3><o_sg1>  ин{Æ}>  >{ы}гъи
+<neut><aor><a_pl3><o_sg1>   н{Æ}>  >{ы}гым
+
+#
+#
+<neut><aor><a_sg2><o_pl1>  :      >{ы}ткугъи
+<neut><aor><a_pl2><o_pl1>  :      >{ы}ткутык
+<neut><aor><a_sg3><o_pl1>  н{Æ}>  >{ы}мык
+<neut><aor><a_pl3><o_pl1>  н{Æ}>  >{ы}мык
+
+<neut><aor><a_sg1><o_sg2>    т{ы}> >{ы}ткугъи
+<neut><aor><a_pl1><o_sg2>  мыт{ы}> >{ы}ткутык
+#
+#
+<neut><aor><a_sg3><o_sg2>  н{Æ}>   >{ы}гыт
+<neut><aor><a_pl3><o_sg2>  н{Æ}>   >{ы}гыт
+
+<neut><aor><a_sg1><o_pl2>    т{ы}> >{ы}тык
+<neut><aor><a_pl1><o_pl2>  мыт{ы}> >{ы}тык
+#
+#
+<neut><aor><a_sg3><o_pl2>  н{Æ}>   >{ы}тык
+<neut><aor><a_pl3><o_pl2>  н{Æ}>   >{ы}тык
+
+<neut><aor><a_sg1><o_sg3>    т{ы}> >{ы}н
+<neut><aor><a_sg1><o_sg3>    т{ы}> >{ы}гъ{Æ}н
+<neut><aor><a_pl1><o_sg3>  мыт{ы}> >{ы}н
+<neut><aor><a_pl1><o_sg3>  мыт{ы}> >{ы}гъ{Æ}н
+<neut><aor><a_sg2><o_sg3>        : >{ы}н
+<neut><aor><a_sg2><o_sg3>        : >{ы}гъ{Æ}н
+<neut><aor><a_pl2><o_sg3>        : >{ы}ткы
+<neut><aor><a_sg3><o_sg3>        : >{ы}нин
+<neut><aor><a_pl3><o_sg3>    н{Æ}> >{ы}н
+
+<neut><aor><a_sg1><o_pl3>    т{ы}> >{ы}н{Æ}т
+<neut><aor><a_pl1><o_pl3>  мыт{ы}> >{ы}н{Æ}т
+<neut><aor><a_sg2><o_pl3>        : >{ы}н{Æ}т
+<neut><aor><a_pl2><o_pl3>        : >{ы}ткы
+<neut><aor><a_sg3><o_pl3>        : >{ы}н{Æ}т
+<neut><aor><a_pl3><o_pl3>    н{Æ}> >{ы}н{Æ}т
+
+#
+#
+<neut><fut><a_sg2><o_sg1>  р{Æ}>ин{Æ}>   >{ы}гъ{Æ}
+<neut><fut><a_pl2><o_sg1>  р{Æ}>ин{Æ}>   >{ы}нтык
+<neut><fut><a_sg3><o_sg1>  р{Æ}>ин{Æ}>   >{ы}гъ{Æ}
+<neut><fut><a_pl3><o_sg1>  н{Æ}>р{Æ}>    >{ы}гым
+
+#
+#
+<neut><fut><a_sg2><o_pl1>  р{Æ}>         >{ы}ткугъ{Æ}
+<neut><fut><a_pl2><o_pl1>  р{Æ}>         >{ы}ткунтык
+<neut><fut><a_sg3><o_pl1>  н{Æ}>р{Æ}>    >{ы}мык
+<neut><fut><a_pl3><o_pl1>  н{Æ}>р{Æ}>    >{ы}мык
+
+<neut><fut><a_sg1><o_sg2>  т{ы}>р{Æ}>    >{ы}гыт
+<neut><fut><a_pl1><o_sg2>  мыт{ы}>р{Æ}>  >{ы}гыт
+#
+#
+<neut><fut><a_sg3><o_sg2>  н{Æ}>р{Æ}>    >{ы}гыт
+<neut><fut><a_pl3><o_sg2>  н{Æ}>р{Æ}>    >{ы}гыт
+
+<neut><fut><a_sg1><o_pl2>  т{ы}>р{Æ}>    >{ы}тык
+<neut><fut><a_pl1><o_pl2>  мыт{ы}>р{Æ}>  >{ы}тык
+#
+#
+<neut><fut><a_sg3><o_pl2>  н{Æ}>р{Æ}>    >{ы}тык
+<neut><fut><a_pl3><o_pl2>  н{Æ}>р{Æ}>    >{ы}тык
+
+<neut><fut><a_sg1><o_sg3>  т{ы}>р{Æ}>    >{ы}ӈын
+<neut><fut><a_pl1><o_sg3>  мыт{ы}>р{Æ}>  >{ы}ӈын
+<neut><fut><a_sg2><o_sg3>       р{Æ}>    >{ы}ӈын
+<neut><fut><a_pl2><o_sg3>       р{Æ}>    >{ы}ӈыткы
+<neut><fut><a_sg3><o_sg3>       р{Æ}>    >{ы}гнин
+<neut><fut><a_pl3><o_sg3>  н{Æ}>р{Æ}>    >{ы}ӈын
+
+<neut><fut><a_sg1><o_pl3>  т{ы}>р{Æ}>    >{ы}ӈын{Æ}т
+<neut><fut><a_pl1><o_pl3>  мыт{ы}>р{Æ}>  >{ы}ӈын{Æ}т
+<neut><fut><a_sg2><o_pl3>       р{Æ}>    >{ы}ӈын{Æ}т
+<neut><fut><a_pl2><o_pl3>       р{Æ}>    >{ы}ӈыткы
+<neut><fut><a_sg3><o_pl3>       р{Æ}>    >{ы}гнин{Æ}т
+<neut><fut><a_pl3><o_pl3>  н{Æ}>р{Æ}>    >{ы}ӈын{Æ}т
+
+#
+#
+<neut><intn><a_sg2><o_sg1>  ин{Æ}>ӄ{ы}>  >{ы}ги
+<neut><intn><a_pl2><o_sg1>  ин{Æ}>ӄ{ы}>  >{ы}тык
+<neut><intn><a_sg3><o_sg1>  ин{Æ}>н{ы}>  >{ы}н
+<neut><intn><a_sg3><o_sg1>  ин{Æ}>н{ы}>  >{ы}гъ{Æ}н
+<neut><intn><a_pl3><o_sg1>         ыʼн>  >{ы}гым
+
+#
+#
+<neut><intn><a_sg2><o_pl1>        ӄ{ы}>  >{ы}ткуги
+<neut><intn><a_pl2><o_pl1>        ӄ{ы}>  >{ы}ткутык
+<neut><intn><a_sg3><o_pl1>         ыʼн>  >{ы}мык
+<neut><intn><a_pl3><o_pl1>         ыʼн>  >{ы}мык
+
+<neut><intn><a_sg1><o_sg2>        м{ы}>  >{ы}гыт
+<neut><intn><a_pl1><o_sg2>      мын{ы}>  >{ы}гыт
+#
+#
+<neut><intn><a_sg3><o_sg2>         ыʼн>  >{ы}гыт
+<neut><intn><a_pl3><o_sg2>         ыʼн>  >{ы}гыт
+
+<neut><intn><a_sg1><o_pl2>        м{ы}>  >{ы}тык
+<neut><intn><a_pl1><o_pl2>      мын{ы}>  >{ы}тык
+#
+#
+<neut><intn><a_sg3><o_pl2>         ыʼн>  >{ы}тык
+<neut><intn><a_pl3><o_pl2>         ыʼн>  >{ы}тык
+
+<neut><intn><a_sg1><o_sg3>        м{ы}>  >{ы}н
+<neut><intn><a_sg1><o_sg3>        м{ы}>  >{ы}гъ{Æ}н
+<neut><intn><a_pl1><o_sg3>      мын{ы}>  >{ы}н
+<neut><intn><a_pl1><o_sg3>      мын{ы}>  >{ы}гъ{Æ}н
+<neut><intn><a_sg2><o_sg3>        ӄ{ы}>  >{ы}гын
+<neut><intn><a_pl2><o_sg3>        ӄ{ы}>  >{ы}гыткы
+<neut><intn><a_sg3><o_sg3>         ыʼн>  >{ы}ӈын
+<neut><intn><a_pl3><o_sg3>         ыʼн>  >{ы}ӈын
+<neut><intn><a_pl3><o_sg3>         ыʼн>  >{ы}гъ{Æ}ӈын
+
+<neut><intn><a_sg1><o_pl3>        м{ы}>  >{ы}н{Æ}т
+<neut><intn><a_pl1><o_pl3>      мын{ы}>  >{ы}н{Æ}т
+<neut><intn><a_sg2><o_pl3>        ӄ{ы}>  >{ы}гын{Æ}т
+<neut><intn><a_pl2><o_pl3>        ӄ{ы}>  >{ы}гыткы
+<neut><intn><a_sg3><o_pl3>        н{ы}>  >{ы}нин{Æ}т
+<neut><intn><a_pl3><o_pl3>         ыʼн>  >{ы}н{Æ}т
+
+#
+#
+<neut><cond><a_sg2><o_sg1>       ъ{ы}>ин{Æ}>ӄ{ы}>  >{ы}ги
+<neut><cond><a_pl2><o_sg1>       ъ{ы}>ин{Æ}>ӄ{ы}>  >{ы}тык
+<neut><cond><a_sg3><o_sg1>       ъ{ы}>ин{Æ}>н{ы}>  >{ы}н
+<neut><cond><a_pl3><o_sg1>       ъ{ы}>ин{Æ}>н{ы}>  >{ы}гъ{Æ}н
+<neut><cond><a_pl3><o_sg1>              ъ{ы}>ыʼн>  >{ы}гым
+
+#
+#
+<neut><cond><a_sg2><o_pl1>             ъ{ы}>ӄ{ы}>  >{ы}ткун
+<neut><cond><a_sg2><o_pl1>             ъ{ы}>ӄ{ы}>  >{ы}ткугъ{Æ}н
+<neut><cond><a_pl2><o_pl1>             ъ{ы}>ӄ{ы}>  >{ы}ткутык
+<neut><cond><a_sg3><o_pl1>              ъ{ы}>ыʼн>  >{ы}мык
+<neut><cond><a_pl3><o_pl1>              ъ{ы}>ыʼн>  >{ы}мык
+
+<neut><cond><a_sg1><o_sg2>             ъ{ы}>м{ы}>  >{ы}гыт
+<neut><cond><a_pl1><o_sg2>           ъ{ы}>мын{ы}>  >{ы}гыт
+#
+#
+<neut><cond><a_sg3><o_sg2>              ъ{ы}>ыʼн>  >{ы}гыт
+<neut><cond><a_pl3><o_sg2>              ъ{ы}>ыʼн>  >{ы}гыт
+
+<neut><cond><a_sg1><o_pl2>             ъ{ы}>м{ы}>  >{ы}тык
+<neut><cond><a_pl1><o_pl2>           ъ{ы}>мын{ы}>  >{ы}тык
+#
+#
+<neut><cond><a_sg3><o_pl2>              ъ{ы}>ыʼн>  >{ы}тык
+<neut><cond><a_pl3><o_pl2>              ъ{ы}>ыʼн>  >{ы}тык
+
+<neut><cond><a_sg1><o_sg3>             ъ{ы}>м{ы}>  >{ы}н
+<neut><cond><a_sg1><o_sg3>             ъ{ы}>м{ы}>  >{ы}гъ{Æ}н
+<neut><cond><a_pl1><o_sg3>           ъ{ы}>мын{ы}>  >{ы}н
+<neut><cond><a_pl1><o_sg3>           ъ{ы}>мын{ы}>  >{ы}гъ{Æ}н
+<neut><cond><a_sg2><o_sg3>             ъ{ы}>ӄ{ы}>  >{ы}гын
+<neut><cond><a_pl2><o_sg3>             ъ{ы}>ӄ{ы}>  >{ы}гыткы
+<neut><cond><a_sg3><o_sg3>              ъ{ы}>ыʼн>  >{ы}нин
+<neut><cond><a_pl3><o_sg3>              ъ{ы}>ыʼн>  >{ы}ӈын
+<neut><cond><a_pl3><o_sg3>              ъ{ы}>ыʼн>  >{ы}гъ{Æ}ӈын
+
+<neut><cond><a_sg1><o_pl3>             ъ{ы}>м{ы}>  >{ы}н{Æ}т
+<neut><cond><a_pl1><o_pl3>           ъ{ы}>мын{ы}>  >{ы}н{Æ}т
+<neut><cond><a_sg2><o_pl3>             ъ{ы}>ӄ{ы}>  >{ы}гын{Æ}т
+<neut><cond><a_pl2><o_pl3>             ъ{ы}>ӄ{ы}>  >{ы}гыткы
+<neut><cond><a_sg3><o_pl3>             ъ{ы}>н{ы}>  >{ы}нин{Æ}т
+<neut><cond><a_pl3><o_pl3>              ъ{ы}>ыʼн>  >{ы}н{Æ}т
+
+#
+#
+<prog><aor><a_sg2><o_sg1>  ин{Æ}>  >{ы}ркыни{·}>
+<prog><aor><a_pl2><o_sg1>  ин{Æ}>  >{ы}ркыни{·}>тык
+<prog><aor><a_sg3><o_sg1>  ин{Æ}>  >{ы}ркыни{·}>
+<prog><aor><a_pl3><o_sg1>   н{Æ}>  >{ы}ркыни{·}>гым
+
+#
+#
+<prog><aor><a_sg2><o_pl1>      :  >ткуркыни{·}>
+<prog><aor><a_pl2><o_pl1>      :  >ткуркыни{·}>тык
+<prog><aor><a_sg3><o_pl1>  н{Æ}>  >{ы}ркыни{·}>мык
+<prog><aor><a_pl3><o_pl1>  н{Æ}>  >{ы}ркыни{·}>мык
+
+<prog><aor><a_sg1><o_sg2>    т{ы}> >{ы}ркыни{·}>гыт
+<prog><aor><a_pl1><o_sg2>  мыт{ы}> >{ы}ркыни{·}>гыт
+#
+#
+<prog><aor><a_sg3><o_sg2>  н{Æ}>   >{ы}ркыни{·}>гыт
+<prog><aor><a_pl3><o_sg2>  н{Æ}>   >{ы}ркыни{·}>гыт
+
+<prog><aor><a_sg1><o_pl2>    т{ы}> >{ы}ркыни{·}>тык
+<prog><aor><a_pl1><o_pl2>  мыт{ы}> >{ы}ркыни{·}>тык
+#
+#
+<prog><aor><a_sg3><o_pl2>  н{Æ}>   >{ы}ркыни{·}>тык
+<prog><aor><a_pl3><o_pl2>  н{Æ}>   >{ы}ркыни{·}>тык
+
+<prog><aor><a_sg1><o_sg3>    т{ы}> >{ы}ркыни{·}
+<prog><aor><a_pl1><o_sg3>  мыт{ы}> >{ы}ркыни{·}
+<prog><aor><a_sg2><o_sg3>        : >{ы}ркыни{·}
+<prog><aor><a_pl2><o_sg3>        : >{ы}ркыни{·}>ткы
+<prog><aor><a_sg3><o_sg3>        : >{ы}ркыни{·}>н
+<prog><aor><a_pl3><o_sg3>    н{Æ}> >{ы}ркыни{·}
+
+<prog><aor><a_sg1><o_pl3>    т{ы}> >{ы}ркыни{·}>{Æ}т
+<prog><aor><a_pl1><o_pl3>  мыт{ы}> >{ы}ркыни{·}>{Æ}т
+<prog><aor><a_sg2><o_pl3>        : >{ы}ркыни{·}>{Æ}т
+<prog><aor><a_pl2><o_pl3>        : >{ы}ркыни{·}>ткы
+<prog><aor><a_sg3><o_pl3>        : >{ы}ркыни{·}>н{Æ}т
+<prog><aor><a_pl3><o_pl3>    н{Æ}> >{ы}ркыни{·}>{Æ}т
+
+#
+#
+<prog><fut><a_sg2><o_sg1>  р{Æ}>ин{Æ}>   >{ы}ркыни{·}
+<prog><fut><a_pl2><o_sg1>  р{Æ}>ин{Æ}>   >{ы}ркыни{·}>тык
+<prog><fut><a_sg3><o_sg1>  р{Æ}>ин{Æ}>   >{ы}ркыни{·}
+<prog><fut><a_pl3><o_sg1>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>гым
+
+#
+#
+<prog><fut><a_sg2><o_pl1>  р{Æ}>         >ткуркыни{·}
+<prog><fut><a_pl2><o_pl1>  р{Æ}>         >ткуркыни{·}>тык
+<prog><fut><a_sg3><o_pl1>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>мык
+<prog><fut><a_pl3><o_pl1>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>мык
+
+<prog><fut><a_sg1><o_sg2>  т{ы}>р{Æ}>    >{ы}ркыни{·}>гыт
+<prog><fut><a_pl1><o_sg2>  мыт{ы}>р{Æ}>  >{ы}ркыни{·}>гыт
+#
+#
+<prog><fut><a_sg3><o_sg2>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>гыт
+<prog><fut><a_pl3><o_sg2>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>гыт
+
+<prog><fut><a_sg1><o_pl2>  т{ы}>р{Æ}>    >{ы}ркыни{·}>тык
+<prog><fut><a_pl1><o_pl2>  мыт{ы}>р{Æ}>  >{ы}ркыни{·}>тык
+#
+#
+<prog><fut><a_sg3><o_pl2>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>тык
+<prog><fut><a_pl3><o_pl2>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>тык
+
+<prog><fut><a_sg1><o_sg3>  т{ы}>р{Æ}>    >{ы}ркыни{·}
+<prog><fut><a_pl1><o_sg3>  мыт{ы}>р{Æ}>  >{ы}ркыни{·}
+<prog><fut><a_sg2><o_sg3>       р{Æ}>    >{ы}ркыни{·}
+<prog><fut><a_pl2><o_sg3>       р{Æ}>    >{ы}ркыни{·}>ткы
+<prog><fut><a_sg3><o_sg3>       р{Æ}>    >{ы}ркыни{·}>н
+<prog><fut><a_pl3><o_sg3>  н{Æ}>р{Æ}>    >{ы}ркыни{·}
+
+<prog><fut><a_sg1><o_pl3>  т{ы}>р{Æ}>    >{ы}ркыни{·}>{Æ}т
+<prog><fut><a_pl1><o_pl3>  мыт{ы}>р{Æ}>  >{ы}ркыни{·}>{Æ}т
+<prog><fut><a_sg2><o_pl3>       р{Æ}>    >{ы}ркыни{·}>{Æ}т
+<prog><fut><a_pl2><o_pl3>       р{Æ}>    >{ы}ркыни{·}>ткы
+<prog><fut><a_sg3><o_pl3>       р{Æ}>    >{ы}ркыни{·}>{Æ}т
+<prog><fut><a_pl3><o_pl3>  н{Æ}>р{Æ}>    >{ы}ркыни{·}>{Æ}т
+
+#
+#
+<prog><intn><a_sg2><o_sg1>  ин{Æ}>ӄ{ы}>  >{ы}ркыни{·}
+<prog><intn><a_pl2><o_sg1>  ин{Æ}>ӄ{ы}>  >{ы}ркыни{·}>тык
+<prog><intn><a_sg3><o_sg1>  ин{Æ}>н{ы}>  >{ы}ркыни{·}
+<prog><intn><a_pl3><o_sg1>         ыʼн>  >{ы}ркыни{·}>гым
+
+#
+#
+<prog><intn><a_sg2><o_pl1>        ӄ{ы}>  >{ы}ткуркыни{·}
+<prog><intn><a_pl2><o_pl1>        ӄ{ы}>  >{ы}ткуркыни{·}>тык
+<prog><intn><a_sg3><o_pl1>         ыʼн>  >{ы}ркыни{·}>мык
+<prog><intn><a_pl3><o_pl1>         ыʼн>  >{ы}ркыни{·}>мык
+
+<prog><intn><a_sg1><o_sg2>        м{ы}>  >{ы}ркыни{·}>гыт
+<prog><intn><a_pl1><o_sg2>      мын{ы}>  >{ы}ркыни{·}>гыт
+#
+#
+<prog><intn><a_sg3><o_sg2>         ыʼн>  >{ы}ркыни{·}>гыт
+<prog><intn><a_pl3><o_sg2>         ыʼн>  >{ы}ркыни{·}>гыт
+
+<prog><intn><a_sg1><o_pl2>        м{ы}>  >{ы}ркыни{·}>тык
+<prog><intn><a_pl1><o_pl2>      мын{ы}>  >{ы}ркыни{·}>тык
+#
+#
+<prog><intn><a_sg3><o_pl2>         ыʼн>  >{ы}ркыни{·}>тык
+<prog><intn><a_pl3><o_pl2>         ыʼн>  >{ы}ркыни{·}>тык
+
+<prog><intn><a_sg1><o_sg3>        м{ы}>  >{ы}ркыни{·}
+<prog><intn><a_pl1><o_sg3>      мын{ы}>  >{ы}ркыни{·}
+<prog><intn><a_sg2><o_sg3>        ӄ{ы}>  >{ы}ркыни{·}
+<prog><intn><a_pl2><o_sg3>        ӄ{ы}>  >{ы}ркыни{·}>ткы
+<prog><intn><a_sg3><o_sg3>         ыʼн>  >{ы}ркыни{·}>н
+<prog><intn><a_pl3><o_sg3>         ыʼн>  >{ы}ркыни{·}
+
+<prog><intn><a_sg1><o_pl3>        м{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><intn><a_pl1><o_pl3>      мын{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><intn><a_sg2><o_pl3>        ӄ{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><intn><a_pl2><o_pl3>        ӄ{ы}>  >{ы}ркыни{·}>ткы
+<prog><intn><a_sg3><o_pl3>        н{ы}>  >{ы}ркыни{·}>н{Æ}т
+<prog><intn><a_pl3><o_pl3>         ыʼн>  >{ы}ркыни{·}>{Æ}т
+
+#
+#
+<prog><cond><a_sg2><o_sg1>       ъ{ы}>ин{Æ}>ӄ{ы}>  >{ы}ркыни{·}
+<prog><cond><a_pl2><o_sg1>       ъ{ы}>ин{Æ}>ӄ{ы}>  >{ы}ркыни{·}>{ы}тык
+<prog><cond><a_sg3><o_sg1>       ъ{ы}>ин{Æ}>н{ы}>  >{ы}ркыни{·}
+<prog><cond><a_pl3><o_sg1>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}гым
+
+#
+#
+<prog><cond><a_sg2><o_pl1>             ъ{ы}>н{ы}>  >{ы}ткуркыни{·}
+<prog><cond><a_pl2><o_pl1>             ъ{ы}>н{ы}>  >{ы}ткуркыни{·}>тык
+<prog><cond><a_sg3><o_pl1>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}мык
+<prog><cond><a_pl3><o_pl1>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}мык
+
+<prog><cond><a_sg1><o_sg2>             ъ{ы}>м{ы}>  >{ы}ркыни{·}>{ы}гыт
+<prog><cond><a_pl1><o_sg2>           ъ{ы}>мын{ы}>  >{ы}ркыни{·}>{ы}гыт
+#
+#
+<prog><cond><a_sg3><o_sg2>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}гыт
+<prog><cond><a_pl3><o_sg2>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}гыт
+
+<prog><cond><a_sg1><o_pl2>             ъ{ы}>м{ы}>  >{ы}ркыни{·}>{ы}тык
+<prog><cond><a_pl1><o_pl2>           ъ{ы}>мын{ы}>  >{ы}ркыни{·}>{ы}тык
+#
+#
+<prog><cond><a_sg3><o_pl2>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}тык
+<prog><cond><a_pl3><o_pl2>              ъ{ы}>ыʼн>  >{ы}ркыни{·}>{ы}тык
+
+<prog><cond><a_sg1><o_sg3>             ъ{ы}>м{ы}>  >{ы}ркыни{·}
+<prog><cond><a_pl1><o_sg3>           ъ{ы}>мын{ы}>  >{ы}ркыни{·}
+<prog><cond><a_sg2><o_sg3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}
+<prog><cond><a_pl2><o_sg3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}>ткы
+<prog><cond><a_sg3><o_sg3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}>н
+<prog><cond><a_pl3><o_sg3>             ъ{ы}>н{Æ}>  >{ы}ркыни{·}
+
+<prog><cond><a_sg1><o_pl3>             ъ{ы}>м{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><cond><a_pl1><o_pl3>           ъ{ы}>мын{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><cond><a_sg2><o_pl3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}>{Æ}т
+<prog><cond><a_pl2><o_pl3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}>ткы
+<prog><cond><a_sg3><o_pl3>             ъ{ы}>н{ы}>  >{ы}ркыни{·}>н{Æ}т
+<prog><cond><a_pl3><o_pl3>             ъ{ы}>н{Æ}>  >{ы}ркыни{·}>{Æ}т
+
+<stat><perf><a_sg2><o_sg1> ин{Æ}> >{I}гыт
+<stat><perf><a_pl2><o_sg1> ин{Æ}> >{ы}тури
+<stat><perf><a_sg3><o_sg1> ин{Æ}> >{ы}ԓин
+<stat><perf><a_pl3><o_sg1>      : >{I}гым
+ 
+<stat><perf><a_sg2><o_pl1> : >{ы}тку>{I}гыт
+<stat><perf><a_pl2><o_pl1> : >{ы}тку>{ы}тури
+<stat><perf><a_sg3><o_pl1> : >{ы}мури
+<stat><perf><a_pl3><o_pl1> : >{ы}мури
+ 
+<stat><perf><o_sg2> : >{I}гыт
+ 
+<stat><perf><a_1><o_pl2> : >{I}гыт
+<stat><perf><a_3><o_pl2> : >{ы}тури
+ 
+<stat><perf><o_sg3> : >{ы}ԓин
+<stat><perf><o_pl3> : >{ы}ԓинэт
+ 
+ 
+<stat><hab><a_sg2><o_sg1> ин{Æ}> >{I}гыт
+<stat><hab><a_pl2><o_sg1> ин{Æ}> >{ы}тури
+<stat><hab><a_sg3><o_sg1> ин{Æ}> >{ы}ӄин
+<stat><hab><a_pl3><o_sg1> : >{I}гым
+ 
+<stat><hab><a_sg2><o_pl1> : >{ы}ткуйгыт
+<stat><hab><a_pl2><o_pl1> : >{ы}ткутури
+<stat><hab><a_sg3><o_pl1> : >{ы}мури
+<stat><hab><a_pl3><o_pl1> : >{ы}мури
+ 
+<stat><hab><a_sg1><o_2> ин{Æ}> >{I}гым
+<stat><hab><a_pl1><o_2> ин{Æ}> >{ы}мури
+<stat><hab><a_3><o_sg2> : >{I}гыт
+<stat><hab><a_3><o_pl2> : >{ы}тури
+ 
+<stat><hab><a_sg1><o_3> ин{Æ}> >{I}гым
+<stat><hab><a_pl1><o_3> ин{Æ}> >{ы}мури
+<stat><hab><a_sg2><o_3> ин{Æ}> >{I}гыт
+<stat><hab><a_pl2><o_3> ин{Æ}> >{ы}тури
+ 
+<stat><hab><a_sg3><o_sg3> ин{Æ}> >{ы}ӄин
+<stat><hab><a_pl3><o_sg3> : >{ы}ӄин
+ 
+<stat><hab><a_sg3><o_pl3> ин{Æ}> >{ы}ӄин{Æ}т
+<stat><hab><a_pl3><o_pl3> : >{ы}ӄин{Æ}т

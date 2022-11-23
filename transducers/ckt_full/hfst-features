@@ -1,0 +1,6 @@
+#!/bin/bash
+
+feature="$1"
+shift
+
+./hfst-alphabet $@ | grep @ | grep -v EPSILON | tr -d @ | cut -d. -f2- | grep '\.' | awk -F. '$1'" == \"$feature\" { print; }" | sort | uniq -c | sort -n

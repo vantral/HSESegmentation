@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hfst-summarise --verbose "$1" | sed -n '/^arc symbols actually seen in transducer:$/,/^sigma symbols missing from transducer:$/p' | sed -e 1d -e '$d' -e 's/, /\n/g'

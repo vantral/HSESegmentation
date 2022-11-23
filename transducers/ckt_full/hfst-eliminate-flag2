@@ -1,0 +1,12 @@
+#!/bin/bash
+
+trans="$1"
+shift
+
+args=( )
+
+for f in $@; do
+	args=( "${args[@]}" "-e" "eliminate flag $f" )
+done
+
+hfst-xfst -e "load stack < $trans" "${args[@]}" -E "write att" --quiet | hfst-txt2fst

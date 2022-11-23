@@ -1,0 +1,143 @@
+PATTERNS
+N-Deriv? N K?
+
+LEXICON K
+<part>:>э
+<part>:>{ы}ӈэ
+<emph>:>ъым    #!!! FIXME
+<clitic>:>{ы}рээн
+
+PATTERN AnimCase
+[<aa><ess>:>{ы}н]
+[<aa><pl><abs>:>{ы}нти]
+[<aa><sg><erg><def>:>{ы}н{Æ}]
+[<aa><pl><erg><def>:>{ы}рык]
+[<aa><sg><loc><def>:>{ы}н{Æ}]
+[<aa><pl><loc><def>:>{ы}рык]
+[<aa><pl><all><def>:>{ы}рыкы{⁺ⱽᴴ}]
+[<aa><all><def>:>{ы}на]
+[<aa>:>{ы}р] OblCase
+
+LEXICON Obl[obl,Ia,Ib,Ic,III,IV,SINGlg,SINGlyng]
+:
+LEXICON Obl[obl,Vv,Vvy]
+:в
+LEXICON Obl[obl,NEG]
+:>ин{Æ}
+
+LEXICON NonOblCase[nonobl]
+<sg><abs>[Ia,Vv,abs]:[Ia,Vv,abs]
+<sg><abs>[Ib]:{°}[Ib]
+<sg><abs>[Ic]:{·}[Ic]
+<sg><abs>[III]:>{ы}н[III]
+<sg><abs>[IV]:>{ы}ӈы[IV]
+<sg><abs>[Vvy]:ы[Vvy]
+<sg><abs>[NEG]:>ин[NEG]
+<sing><abs>[SINGlg]:>{ы}ԓгын{⁺ⱽᴴ}[SINGlg]
+<sing><abs>[SINGlyng]:>{ы}ԓыӈын{⁺ⱽᴴ}[SINGlyng]
+
+LEXICON OblCase[obl,Ia,Ib,Ic,III,IV,SINGlg,SINGlyng,Vv,Vvy,NEG]
+<pl><abs>:>{ы}т{и}
+<erg>:>{T}{Æ}
+<ess>:>у
+<loc>:>{ы}к
+<all>:>{G}ты{⁺ⱽᴴ}
+<abl>:>{G}{ы}пы{⁺ⱽᴴ}
+<ori>:>{ы}гйит
+<ine>:>{ы}чыку
+<per>:>{ы}еквэ{⁺ⱽᴴ}
+<sub>:>{ы}йиӈкы
+
+LEXICON Poss[Ia]
+# different possessed, mark on the possessor
+<poss><1sg>:>ин{Æ}гым
+<poss><2sg>:>ин{Æ}гыт
+<poss><1pl>:>ин{Æ}мури
+<poss><2pl>:>ин{Æ}тури
+<poss><3pl>:>ин{Æ}т{и}
+<pl><poss><1sg>:>{ы}ргин{Æ}гым
+<pl><poss><2sg>:>{ы}ргин{Æ}гыт
+<pl><poss><3sg>:>{ы}ргин
+<pl><poss><1pl>:>{ы}ргин{Æ}мури
+<pl><poss><2pl>:>{ы}ргин{Æ}тури
+<pl><poss><3pl>:>{ы}ргин{Æ}т{и}
+
+LEXICON Poss[Ic]
+<poss><3sg>:>ин{Æ}
+
+# different possessors, mark on the possessed
+LEXICON Poss[abs]
+<px1sg><abs>:>{ы}гым
+<px2sg><abs>:>{ы}гыт
+<px3sg><abs>:>{ы}н
+<px1pl><abs>:>{ы}мури
+<px2pl><abs>:>{ы}тури
+<px3pl><abs>:>{ы}т{и}
+
+LEXICON Rel[Ia]
+<rel>:>{ы}кин
+
+LEXICON AccCase(3)
+<com>    г{Æ}>  >{T}{Æ}
+<assoc>  га>    >{ы}ма{⁺ⱽᴴ}
+<prv>    {Æ}>   >{ы}к{Æ}
+
+LEXICON N-Deriv
+<f>:ӈ{Æ}в{ы}>
+#<ints>:ԓ{ы}ги>
+#<ints2>:т{Æ}>
+<restr>:{Æ}м>
+<approx>:м{Æ}ԓ>
+<approx>:м{Æ}ч>
+<auth>:ԓ{ы}ги>
+
+PATTERN Case
+Obl OblCase|AnimCase
+NonOblCase
+
+PATTERN DerivedNouns
+Nouns Deriv-N?
+
+LEXICON Nominaliser[Ia]
+<nmzr>:>{ы}ԓӄыԓ
+
+LEXICON Nominaliser[III]
+<nmzr>:>{ы}чь
+<nmzr>:>{ы}ёԓг
+
+PATTERN Deriv-N
+Poss
+Rel
+
+PATTERN Derived-N
+Nouns
+DerivableVerbStem[-iv] [<pass>[Ia]:>{ы}ё{T}[Ia]]
+DerivableVerbStem[-tv] [<act>[III]:>{ы}ԓь[III]]
+DerivableVerbStem[-tv] [<act><neg>[Ia]:>{T}{Æ}>{ы}ԓь[Ia]]
+DerivableVerbStem[-tv] [<act><neg>[NEG]:>{ы}к{Æ}>{ы}ԓь[NEG]]
+DerivableVerbStem      SimpleGerund | ( [<ger>:] Deriv-N )
+
+LEXICON SimpleGerund
+<ger>[Ia]:>{ы}ԓӄыԓ[Ia]
+<ger><act>[III]:>{ы}гырг{⁺ⱽᴴ}[III]
+<ger><loc>[Vv]:>{ы}н{⁺ⱽᴴ}[Vv]
+<ger><age>[III]:>{ы}я[III]
+<ger><ins>[Ic]:>{и}н{Æ}ӈ{Æ}[Ic]
+<ger><cnt>[III]:>{ы}ёԓг[III]
+
+PATTERN N
+Derived-N[Ia]       Case[Ia]
+Derived-N[Ib]       Case[Ib]
+Derived-N[Ic]       Case[Ic]
+Nouns Poss[Ic]      Case[Ic]
+Nouns Poss[abs]     NonOblCase[abs]
+Derived-N[III]      Case[III]
+Derived-N[IV]       Case[IV]
+Derived-N[Vv]       Case[Vv]
+Derived-N[Vvy]      Case[Vvy]
+#Derived-N[NEG]      Case[NEG]
+Derived-N[SINGlg]   Case[SINGlg]
+Derived-N[SINGlyng] Case[SINGlyng]
+Derived-N[abs]      NonOblCase[abs]
+Derived-N[obl]      Obl[-Vv,-Vy] OblCase
+:AccCase(2) Derived-N[-abs] AccCase(1):AccCase(3)

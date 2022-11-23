@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./hfst-alphabet $@ 2>/dev/null | grep @ | grep -v EPSILON | tr -d @ | cut -d. -f2 | sort | uniq -c | sort -n
