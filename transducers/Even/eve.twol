@@ -1,0 +1,104 @@
+Alphabet
+  a b c d e f g i j k l m n o p r s t u v w x z ŋ č ž š ə ɨ ɵ γ
+  %>:0
+  a:e a:ə
+  ɵ:o ɵ:u
+  s:š s:š
+  i:i i:ɨ i:ə
+  %{w%}:bu %{w%}:m %{w%}:w
+  %{n%}:0 %{n%}:n
+  %{č%}:č %{č%}:d'i %{č%}:əč %{č%}:n'
+  %{l%}:əl %{l%}:l
+  %{gič%}:ŋič %{gič%}:gič
+  %{gčin%}:ŋčin %{gčin%}:gačin %{gčin%}:gčin
+  %{wu%}:w %{wu%}:wu %{wu%}:u %{wu%}:mu %{wu%}:bu %{wu%}:ku
+  %{n3sg%}:ni %{n3sg%}:wan %{n3sg%}:n
+  %{t%}:ti %{t%}:wun %{t%}:t
+  %{wun%}:un %{wun%}:mun %{wun%}:bun %{wun%}:kun %{wun%}:wur %{wun%}:wun
+  %{tan%}:wutan %{tan%}:tan
+  %{i%}:i %{i%}:j %{i%}:mi %{i%}:bi
+  %{wur%}:wur %{wur%}:war %{wur%}:ur %{wur%}:mur %{wur%}:bur
+  %{Rpst%}:t %{Rpst%}:s %{Rpst%}:š %{Rpst%}:n %{Rpst%}:č %{Rpst%}:r %{Rpst%}:d
+  %{C%}:b %{C%}:d %{C%}:t %{C%}:g %{C%}:m %{C%}:n %{C%}:v %{C%}:č %{C%}:l %{C%}:ŋ
+  %{R%}:d %{R%}:t %{R%}:s %{R%}:š %{R%}:0 %{R%}:r
+;
+
+Sets
+Consonant = b c d f g j k l m n p r s t v w %{w%} x z ŋ č ž š γ;
+VoicelessConsonant = f k p s t č š;
+aeə = a e ə;
+Vowels = a e ə u ɨ ɵ o;
+
+Rules
+"d  Voiceless_Consonant _"
+d:t => VoicelessConsonant %> _ ;
+"{l} (PL) after Consonant"
+%{l%}:əl => [Consonant|%{n%}:] %> _ ;
+"{l} (PL)r after {n}"
+%{l%}:r => %{n%}: %> _ ;
+"{w}(ACC) after pl"
+%{w%}:bu <=> %{l%}: %> _ ;
+"{w}(ACC) after {n}"
+%{w%}:m <=> %{n%}: %> _ ;
+"{č} (INS) after pl"
+%{č%}:d'i <=> %{l%}: %> _ ;
+"{č} (INS) after Consonant"
+%{č%}:əč <=> Consonant %> _ ;
+"{č} (INS) after {n}"
+%{č%}:n' <=> %{n%}: %> _ ;
+"{gič} (ELAT) after {n}"
+%{gič%}:ŋič <=> %{n%}: %> _ ;
+"{gčin} (EQU) after {n}"
+%{gčin%}:ŋčin <=> %{n%}: %> _ ;
+"{gčin} (EQU) after pl"
+%{gčin%}:gačin <=> %{l%}: %> _ ;
+"{wu}(POSS.1SG) after Consonant"
+%{wu%}:u <= [Consonant|%{w%}:] %> _ ;
+"{w}(POSS.1SG) after {n}"
+%{wu%}:mu <=> %{n%}: %> _ ;
+"{wu}(POSS.1SG) after pl"
+%{wu%}:bu <=> %{l%}: %> _ ;
+"{wu}(POSS.1SG) after dst"
+%{wu%}:ku <=> g aeə %> _ ;
+"{n3sg}(POSS.3SG) after {n} and pl"
+%{n3sg%}:ni <=> [%{n%}:| %{l%}:] %> _ ;
+"{n3sg}(POSS.3SG) after ptc.fut"
+%{n3sg%}:wan <=> [dŋ|d'iŋ] aeə %> _ ;
+"{t}(POSS.1PL.INC) after {n} and pl"
+%{t%}:ti <=> [%{n%}:| %{l%}:] %> _ ;
+"{t}(POSS.1PL.INC) after ptc.fut"
+%{t%}:wun <=> [dŋ|d'iŋ] aeə %> _ ;
+"{wun}(POSS.1PL.EXC) after Consonant"
+%{wun%}:un <=> [Consonant|%{w%}:] %> _ ;
+"{wun}(POSS.1PL.EXC) after {n}"
+%{wun%}:mun <=> %{n%}: %> _ ;
+"{wun}(POSS.1PL.EXC) after pl"
+%{wun%}:bun <=> %{l%}: %> _ ;
+"{wun}(POSS.1PL.EXC) after dst"
+%{wun%}:kun <=> g aeə %> _ ;
+"{wun}(POSS.1PL.EXC) after ptc.fut"
+%{wun%}:wur <=> [dŋ|d'iŋ] aeə %> _ ;
+"{tan}(POSS.3PL) after ptc.fut"
+%{tan%}:wutan <=> [dŋ|d'iŋ] aeə %> _ ;
+"{wur}(POSS.REFL.PL) after Consonant"
+%{wur%}:ur <= [Consonant|%{w%}:] %> _ ;
+"{Rpst} t _ realisation"
+%{Rpst%}:t <= t %> _ ;
+"{Rpst} č _ realisation"
+%{Rpst%}:t <= č %> _ ;
+"{Rpst} p _ realisation"
+%{Rpst%}:t <= p %> _ ;
+"{Rpst} š _ realisation"
+%{Rpst%}:š <= š %> _ ;
+"{Rpst} n _ realisation"
+%{Rpst%}:n => n %> _ ;
+"{R} {n} _ realisation"
+%{R%}:0 <=> %{n%}: %> _ ;
+"{R} _2sg realisation"
+%{R%}:0 => _ nni.#.;
+"{R} _2pl realisation"
+%{R%}:0 => _ š ;
+"{R} _3sg realisation"
+%{R%}:0 => Vowels %> _ n.#.;
+"{R} _3sg realisation"
+%{R%}:0 => Vowels %> _ ni.#.;
